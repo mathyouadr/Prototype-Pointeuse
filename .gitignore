@@ -1,0 +1,25 @@
+# Arduino / PlatformIO
+build/
+.build/
+*.hex
+*.bin
+*.elf
+*.map
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# Bibliothèques installées localement
+libraries/
+
+# Éditeurs
+.vscode/
+.idea/
+*.code-workspace
+
+# Systèmes
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+*.swp
