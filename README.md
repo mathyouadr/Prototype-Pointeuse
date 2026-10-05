@@ -2,6 +2,8 @@
 
 Prototype de démonstration d'une **pointeuse et d'un suivi d'outillage par badge RFID**, entièrement autonome : l'ESP32 crée son propre réseau WiFi et héberge l'interface web. Aucun serveur, aucune connexion Internet, aucune application à installer — un navigateur suffit.
 
+> **Projet vibecodé** : développé avec l'aide d'une IA générative. Les diagrammes de la section [Fonctionnement](#fonctionnement) ont été générés avec Claude Code.
+
 Un badge = un usage, choisi à sa création et définitif :
 
 | Usage | 1er scan | 2e scan |
