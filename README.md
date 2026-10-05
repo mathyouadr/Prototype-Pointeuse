@@ -44,7 +44,11 @@ Chaque mouvement est affiché dans le journal, annoncé vocalement par le naviga
 
 > **Le RC522 n'est pas tolérant au 5 V.** Le relier à VIN détruit le module.
 
-Le schéma détaillé, avec les points de vigilance et la procédure de mise en service, est disponible en PDF : [`docs/schema-branchement.pdf`](docs/schema-branchement.pdf).
+Points de vigilance :
+
+- Fils courts (< 20 cm) : le SPI supporte mal les longues liaisons volantes.
+- Éloigner l'antenne des masses métalliques et de la carte ESP32, qui réduisent la portée.
+- Souder le connecteur du RC522 plutôt que de le laisser en contact libre.
 
 ## Installation
 
@@ -186,8 +190,7 @@ sequenceDiagram
 │   └── test_lecteur/
 │       └── test_lecteur.ino    # utilitaire série : lire / écrire un bloc d'un badge
 ├── docs/
-│   ├── schema-branchement.pdf  # schéma de câblage et mise en service (2 pages)
-│   └── schema-branchement.png  # version image du schéma
+│   └── schema-branchement.png  # schéma de câblage
 ├── LICENSE
 └── README.md
 ```
