@@ -91,11 +91,9 @@ L'heure est fournie par le navigateur au premier chargement de la page ; tant qu
 Tout tourne sur l'ESP32 : point d'accès WiFi, portail captif, serveur web et logique des badges. Le navigateur affiche l'interface et se charge de la synthèse vocale.
 
 ```mermaid
-flowchart LR
-    subgraph CLIENT["Téléphone / PC"]
-        NAV["Navigateur<br/>interface web + synthèse vocale"]
-    end
-    subgraph ESP["ESP32 WROOM-32 — point d'accès « RFID-Gestion » (192.168.4.1)"]
+flowchart TB
+    NAV["Navigateur (téléphone / PC)<br/>interface web + synthèse vocale"]
+    subgraph ESP["ESP32 WROOM-32"]
         DNS["Serveur DNS<br/>portail captif"]
         WEB["Serveur web :80<br/>page + API JSON"]
         LOGIC["Logique badges<br/>fiches + journal en RAM"]
@@ -104,8 +102,8 @@ flowchart LR
     RC["Lecteur RC522"]
     TAG(["Badge MIFARE Classic 1K"])
 
-    NAV -.->|"toute requête DNS → 192.168.4.1"| DNS
-    NAV <-->|"WiFi · HTTP, interrogation toutes les 800 ms"| WEB
+    NAV -.->|"toute requête DNS<br/>→ 192.168.4.1"| DNS
+    NAV <-->|"WiFi « RFID-Gestion »<br/>HTTP toutes les 800 ms"| WEB
     WEB <--> LOGIC
     LOGIC <--> NVS
     LOGIC <-->|"SPI"| RC
